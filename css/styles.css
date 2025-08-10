@@ -480,6 +480,10 @@ a {
   gap: 24px;
 }
 
+.subscribe-div {
+  margin-left: 80px;
+}
+
 .subscribe-input {
   width: 264px;
   height: 40px;
