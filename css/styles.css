@@ -466,6 +466,60 @@ a {
   background-color: #31d0aa;
 }
 
+.subscribe-paragraph {
+  margin-bottom: 16px;
+  font-weight:500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.subscribe-input::placeholder {
+  color #ffffff;
+}
+
+.subscribe-btn {
+  min-width: 165px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  background-color: #4d5ae5;
+  border: none;
+  border-radius: 4px;
+}
+
+.subscribe-btn-image {
+  margin-left: 16px;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -477,7 +531,8 @@ a {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 
 .backdrop.is-open {
@@ -487,7 +542,7 @@ a {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 408px;
@@ -507,23 +562,37 @@ a {
 
 .modal-close-btn {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
-
+  padding: 0;
   top: 24px;
   right: 24px;
   cursor: pointer;
   border-radius: 50%;
-  border: 1px #8e8f99, solid;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
   fill: #2e2f42;
-
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn:hover {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
   background-color: #404bbf;
-  fill: #fff;
+  border: none;
+  
+}
+
+.close-image {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-image:hover, 
+.close-image:focus {
+  fill: #ffffff;
 }
 
 .backdrop-paragraph {
@@ -538,21 +607,22 @@ a {
 }
 
 .modal-form {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
+
 .modal-form-label {
   display: block;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: 0.04em;
+  line-height: 1.17;
   color: #8e8f99;
   margin-bottom: 4px;
 
 }
 
 .modal-div {
-  fill: #2e2f42;
- 
+  position: relative;
 }
 
 .modal-div:active {
@@ -564,8 +634,7 @@ a {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-
-
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input {
@@ -574,19 +643,17 @@ a {
   width: 100%;
   height: 40px;
   background-color: transparent;
-  outline: none;
+  outline: transparent;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: #2e2f42;
+  padding-left: 38px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus {
   border-color: #4d5ae5;
-}
-
-.modal-form-input:focus ~ svg {
-  fill: #4d5ae5;
 }
 
 .modal-form-textarea {
@@ -596,6 +663,17 @@ a {
   height: 120px;
   background-color: transparent;
   resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  padding: 8px 16px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-textarea:focus {
+  border-color: #4D5AE5;
 }
 
 .modal-form-textarea::placeholder {
@@ -603,6 +681,13 @@ a {
   font-size: 12px;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-form-policy {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 
 .modal-form-privacy {
@@ -613,6 +698,25 @@ a {
 .privacy {
   line-height: 1.3;
   text-decoration: underline;
-  text-decoration-skip-ink: none;
   color: #4d5ae5;
+}
+
+.checkbox-privacy {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.visually-hidden:checked + .modal-form-policy .checkbox-privacy {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
