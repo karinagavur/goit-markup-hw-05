@@ -499,7 +499,11 @@ a {
 }
 
 .subscribe-input::placeholder {
-  color #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
 }
 
 .subscribe-btn {
@@ -522,6 +526,7 @@ a {
 
 .subscribe-btn-image {
   margin-left: 16px;
+  fill: #fff;
 }
 
 .backdrop {
@@ -601,7 +606,6 @@ a {
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
-  margin-top: 24px;
   margin-bottom: 16px;
 }
 
@@ -699,7 +703,6 @@ a {
 }
 
 .modal-form-privacy {
-  margin-top: 26px;
   margin-bottom: 24px;
 }
 
@@ -721,6 +724,7 @@ a {
   align-items: center;
   justify-content: center;
   fill: transparent;
+  margin-right: 8px;
 }
 
 .visually-hidden:checked + .modal-form-policy .checkbox-privacy {
